@@ -1,0 +1,11 @@
+SELECT 'CDB;PDB;NOMBRE_SERVICIO;ERROR;ESTADO;PREFERED;AVAILABLE;INSTANCIAS;CLBG;RLBG;' FROM DUAL
+UNION ALL
+SELECT * FROM (SELECT cdb||';'||PDB||';'||NOMBRE_SERVICIO||';'||tipo||';'||ESTADO||';'||PREFERED||';'||AVAILABLE||';'||INSTANCIAS||';'||CLBG||';'||RLBG||';' FROM METBD.T0SERVICIOEXACC WHERE TIPO<>'Ok' ORDER BY cdb asc,PDB ASC,TIPO asc);  2    3
+
+'CDB;PDB;NOMBRE_SERVICIO;ERROR;ESTADO;PREFERED;AVAILABLE;INSTANCIAS;CLBG;RLBG;'
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CDB;PDB;NOMBRE_SERVICIO;ERROR;ESTADO;PREFERED;AVAILABLE;INSTANCIAS;CLBG;RLBG;
+iibr1uco_fra;HLOANIQ;hloaniq_sapp;ERROR-"Runtime Load Balancing" Goal mal configurado. ERROR-"Connection Load Balancing" Goal mal configurado. ;online;iibr1uco_fra1,iibr1uco_fra2;;iibr1uco_fra1,iibr1u
+co_fra2;LONG;NONE;
+
+
