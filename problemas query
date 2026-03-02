@@ -9,3 +9,21 @@ iibr1uco_fra;HLOANIQ;hloaniq_sapp;ERROR-"Runtime Load Balancing" Goal mal config
 co_fra2;LONG;NONE;
 
 
+
+SELECT 'CDB;PDB;NOMBRE_SERVICIO;ERROR;ESTADO;PREFERED;AVAILABLE;INSTANCIAS;CLBG;RLBG' FROM DUAL
+UNION ALL
+SELECT
+    cdb             || ';' ||
+    pdb             || ';' ||
+    nombre_servicio || ';' ||
+    tipo            || ';' ||
+    estado          || ';' ||
+    prefered        || ';' ||
+    available       || ';' ||
+    instancias      || ';' ||
+    clbg            || ';' ||
+    rlbg
+FROM METBD.T0SERVICIOEXACC
+WHERE tipo <> 'Ok'
+ORDER BY 1 ASC;
+
